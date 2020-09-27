@@ -1,11 +1,8 @@
 {
-  "name": "neptun-year-preselect",
+  "name": "neptun-semester-preselect",
   "private": true,
   "engines": {
     "node": ">=0.8.0"
-  },
-  "scripts": {
-    "preinstall": "npx npm-force-resolutions"
   },
   "resolutions": {},
   "devDependencies": {

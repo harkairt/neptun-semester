@@ -1,16 +1,13 @@
 {
-  "name": "__MSG_appName__",
-  "version": "0.0.1",
-  "manifest_version": 2,
-  "description": "__MSG_appDescription__",
+  "name": "Neptun semester preselect",
+  "version": "0.1.0",
+  "manifest_version": 1,
+  "description": "This extension selects the current semester in neptun dropdowns",
   "icons": {
     "16": "images/icon-16.png",
     "128": "images/icon-128.png"
   },
   "default_locale": "en",
-  "background": {
-    "scripts": ["libs/polyfill.min.js", "scripts/background.js"]
-  },
   "browser_action": {
     "default_icon": {
       "16": "images/icon-16.png",
@@ -19,7 +16,7 @@
     "default_title": "Beállítások",
     "default_popup": "pages/options.html"
   },
-  "permissions": ["storage", "tabs"],
+  "permissions": ["storage"],
   "options_ui": {
     "page": "pages/options.html",
     "open_in_tab": false
