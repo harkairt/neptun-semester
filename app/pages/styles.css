@@ -1,6 +1,6 @@
 .body {
   min-width: 200px;
-  padding: 8px 8px 0px 8px;
+  padding: 8px 4px 8px 8px;
 }
 
 .row {
@@ -10,21 +10,34 @@
   align-items: center;
 }
 
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: stretch;
+}
+
+.automatic-listing-row {
+  margin-top: 22px;
+}
+
+.enabled-label-row {
+  margin-bottom: 22px;
+}
+
+.strong {
+  font-size: medium;
+  font-weight: bold;
+}
+
 .config {
-  margin-top: 12px;
   opacity: 0;
-  height: 0px;
+  /* height: 0px; */
   transition: opacity 200ms ease-in-out, height 200ms ease-in-out;
 }
 
-.saving {
+.donate-link {
   margin-top: 8px;
-}
-
-.status {
-  margin-bottom: 2px;
-  opacity: 0;
-  transition: opacity 100ms ease-in-out;
 }
 
 .active {
@@ -35,7 +48,7 @@
 .switch {
   position: relative;
   display: inline-block;
-  width: 60px;
+  min-width: 60px;
   height: 34px;
   transform: scale(0.7);
 }

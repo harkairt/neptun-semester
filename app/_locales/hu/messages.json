@@ -6,5 +6,24 @@
   "appDescription": {
     "message": "Ez a kiegészítő neptun legördülő menükben automatikusan kiválasztja az aktuális félévet",
     "description": "The description of the application"
+  },
+  "enabledLabel": {
+    "message": "Engedélyezve"
+  },
+  "automaticListingLabel": {
+    "message": "Automatikus kattintás a 'Listázás' gombra (kísérleti)"
+  },
+  "donateLabel": {
+    "message": "Kedves fejlesztő, egy kávét?"
+  },
+  "semesterMatch": {
+    "message": "Kiválasztás $PATTERN$ majd '(aktuális félév)' alapján",
+    "description": "Semester selection description",
+    "placeholders": {
+      "PATTERN" : {
+        "content" : "$1",
+        "example" : "2020/21/1"
+      }
+    }
   }
 }

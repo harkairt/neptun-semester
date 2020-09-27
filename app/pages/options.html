@@ -6,48 +6,38 @@
     <title></title>
   </head>
   <body class="body">
-    <div class="row">
-      Engedélyezve:
-      <label class="switch">
-        <input type="checkbox" id="main-switch" />
-        <span class="slider round"></span>
-      </label>
-    </div>
-
-    <div class="config">
-      <div>Aktuális félév kiválasztása:</div>
-      <br />
-
-      <input
-        type="radio"
-        name="conf"
-        id="semesterMatch"
-        value="semesterMatch"
-      />
-      <label for="semesterMatch" id="semesterMatchLabel">.</label>
-      <br />
-      <input
-        type="radio"
-        name="conf"
-        id="currentSemester"
-        value="currentSemester"
-      />
-      <label for="currentSemester">"(aktuális félév)" alapján</label>
-
-      <br />
-      <div class="saving row">
-        <div class="status">Mentve.</div>
+    <div class="column">
+      <div class="row" class="enabled-label-row">
+        <span id="enabled-label" class="strong"></span>
+        <label class="switch">
+          <input type="checkbox" id="main-switch" />
+          <span class="slider round"></span>
+        </label>
       </div>
-    </div>
+  
+      <div class="config">
+  
+        <label id="semesterMatchLabel"></label>
+  
+        <div class="row automatic-listing-row">
+          <span id="automatic-listing-label"></span>
+          <label class="switch">
+            <input type="checkbox" id="automatic-listing-switch" />
+            <span class="slider round"></span>
+          </label>
+        </div>
+        <br />
+      </div>
 
-    <div class="bmc-btn-container">
-      <a
-        class="bmc-btn"
-        target="_blank"
-        href="http://buymeacoffee.com/thark"
-        rel="noopener"
-      >
-      Kedves fejlesztő, kérsz egy kávét? ☕
+      <div class="donate-link">
+        <a
+          class="bmc-btn"
+          target="_blank"
+          href="http://buymeacoffee.com/thark"
+          rel="noopener"
+        >
+        <span id="donate-label"></span> ☕
+      </div>
     </div>
 
     <script src="options.js"></script>

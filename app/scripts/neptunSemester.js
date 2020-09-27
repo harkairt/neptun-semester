@@ -1,47 +1,50 @@
-const options = Array.from(document.querySelectorAll('option'));
-const currentSemesterOption = options.filter(option => option.label.includes('(aktuális félév)'))
-
 chrome.storage.sync.get({
-  preference: 'semesterMatch',
-  enabled: 'false'
-}, async function (items) {
-  if (!items.enabled) {
+  automaticListing: true,
+  enabled: true
+}, async function (prefs) {
+  if (!prefs.enabled) {
     return
   }
 
     if (window.location.toString().includes('neptun')) {
-    selectCurrentSemester(items.preference)
-  }
+      const options = Array.from(document.querySelectorAll('option'));
+      const selectSuccess = selectCurrentSemester(options);
+
+      if (prefs.automaticListing && selectSuccess) {
+        clickListing()
+      }
+    }
 });
 
-function selectCurrentSemester(preferredSelection) {
-  if (preferredSelection === 'semesterMatch') {
-    const success = selectCurrentSemesterBySemesterMatch()
-    if (!success) {
-      selectCurrentSemesterByCurrentSemesterString()
-    }
+function selectCurrentSemester(options) {
+  const semesterFormatMatch = getOptionsMatchingSemesterFormat(options)
+  if (semesterFormatMatch.length > 0) {
+    selectOptions(semesterFormatMatch)
+    return true
   } else {
-    const success = selectCurrentSemesterByCurrentSemesterString()
-    if (!success) {
-      selectCurrentSemesterBySemesterMatch()
+    const currentSemesterMarkerMatches = getOptionsMatchingCurrentSemesterMarker(options)
+    if (currentSemesterMarkerMatches.length > 0) {
+      selectOptions(currentSemesterMarkerMatches)
+      return true
     }
   }
+
+  return false
 }
 
-function selectCurrentSemesterByCurrentSemesterString() {
-  const currentSemesterOption = options.filter(option => option.label.includes('(aktuális félév)'))
-
-  if (currentSemesterOption.length) {
-    console.log('found (aktuális félév)');
-    selectOptions(currentSemesterOption)
-  } else {
-    console.log('no option matches (aktuális félév)');
-  }
-
-  return currentSemesterOption.length
+function getOptionsMatchingSemesterFormat(options) {
+  return options.filter((option) => option.label.includes(semesterFormat()))
 }
 
-function selectCurrentSemesterBySemesterMatch() {
+function getOptionsMatchingCurrentSemesterMarker(options) {
+  return options.filter(option => option.label.includes('(aktuális félév)'))
+}
+
+function selectOptions(optionsList) {
+  optionsList.forEach((option) => { option.selected = 'selected' })
+}
+
+function semesterFormat() {
   const now = new Date()
   const year = now.getFullYear()
   const nextYearLastDigits = (year + 1) % 100
@@ -50,21 +53,12 @@ function selectCurrentSemesterBySemesterMatch() {
 
   const semester = autumnSemester ? 1 : 2
 
-  const targetLabel = `${year}/${nextYearLastDigits}/${semester}`
-
-  const optionsThatMatchTargetLabel = options.filter((option) => option.label.includes(targetLabel))
-
-  if (optionsThatMatchTargetLabel.length) {
-    console.log('found option which matches', targetLabel);
-    selectOptions(optionsThatMatchTargetLabel)
-  } else {
-    console.log('no option matches', targetLabel);
-
-  }
-
-  return optionsThatMatchTargetLabel.length
+  return `${year}/${nextYearLastDigits}/${semester}`
 }
 
-function selectOptions(optionsList) {
-  optionsList.forEach((option) => { option.selected = 'selected' })
+function clickListing() {
+  const listingButtons = Array.from(document.querySelectorAll('input[role="button"][type="submit"]'));
+  if (listingButtons.length === 2) {
+    listingButtons[0].click()
+  }
 }
