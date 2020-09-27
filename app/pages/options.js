@@ -12,7 +12,6 @@ function setMessages() {
   document.getElementById('semesterMatchLabel').innerHTML = chrome.i18n.getMessage('semesterMatch', targetLabel);
   document.getElementById('enabled-label').innerHTML = chrome.i18n.getMessage('enabledLabel');
   document.getElementById('automatic-listing-label').innerHTML = chrome.i18n.getMessage('automaticListingLabel');
-  document.getElementById('donate-label').innerHTML = chrome.i18n.getMessage('donateLabel');
 }
 
 function restoreOptions() {

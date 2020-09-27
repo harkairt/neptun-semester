@@ -1,6 +1,6 @@
 .body {
   min-width: 200px;
-  padding: 8px 4px 8px 8px;
+  padding: 12px 4px 8px 8px;
 }
 
 .row {
@@ -32,12 +32,7 @@
 
 .config {
   opacity: 0;
-  /* height: 0px; */
   transition: opacity 200ms ease-in-out, height 200ms ease-in-out;
-}
-
-.donate-link {
-  margin-top: 8px;
 }
 
 .active {

@@ -13,16 +13,13 @@
   "automaticListingLabel": {
     "message": "Click on 'Listázás' button (experimental)"
   },
-  "donateLabel": {
-    "message": "Dear dev, may I get you a coffee? "
-  },
   "semesterMatch": {
     "message": "Matching based on $PATTERN$ then '(aktuális félév)'",
     "description": "Semester selection description",
     "placeholders": {
-      "PATTERN" : {
-        "content" : "$1",
-        "example" : "2020/21/1"
+      "PATTERN": {
+        "content": "$1",
+        "example": "2020/21/1"
       }
     }
   }

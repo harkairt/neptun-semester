@@ -13,16 +13,13 @@
   "automaticListingLabel": {
     "message": "Automatikus kattintás a 'Listázás' gombra (kísérleti)"
   },
-  "donateLabel": {
-    "message": "Kedves fejlesztő, egy kávét?"
-  },
   "semesterMatch": {
     "message": "Kiválasztás $PATTERN$ majd '(aktuális félév)' alapján",
     "description": "Semester selection description",
     "placeholders": {
-      "PATTERN" : {
-        "content" : "$1",
-        "example" : "2020/21/1"
+      "PATTERN": {
+        "content": "$1",
+        "example": "2020/21/1"
       }
     }
   }
