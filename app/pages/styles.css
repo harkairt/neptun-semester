@@ -1,6 +1,8 @@
 .body {
+  font-family: "Segoe UI", Tahoma, sans-serif;
+  font-size: 75%;
   min-width: 200px;
-  padding: 12px 4px 8px 8px;
+  padding: 6px 4px 0px 8px;
 }
 
 .row {
