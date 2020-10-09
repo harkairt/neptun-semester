@@ -10,6 +10,11 @@
   align-items: center;
 }
 
+em {
+  font-weight: bold;
+  font-style: normal;
+}
+
 .column {
   display: flex;
   flex-direction: column;
@@ -31,6 +36,7 @@
 }
 
 .config {
+  padding-top: 12px;
   opacity: 0;
   transition: opacity 200ms ease-in-out, height 200ms ease-in-out;
 }

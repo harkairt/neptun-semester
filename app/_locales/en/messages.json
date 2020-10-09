@@ -11,10 +11,10 @@
     "message": "Enabled"
   },
   "automaticListingLabel": {
-    "message": "Click on 'Listázás' button (experimental)"
+    "message": "Click on <em>Listázás</em> button"
   },
   "semesterMatch": {
-    "message": "Matching based on $PATTERN$ then '(aktuális félév)'",
+    "message": "Selecting $PATTERN$ automatically",
     "description": "Semester selection description",
     "placeholders": {
       "PATTERN": {

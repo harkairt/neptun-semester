@@ -11,10 +11,10 @@
     "message": "Engedélyezve"
   },
   "automaticListingLabel": {
-    "message": "Automatikus kattintás a 'Listázás' gombra (kísérleti)"
+    "message": "Kattintás a <em>Listázás</em> gombra"
   },
   "semesterMatch": {
-    "message": "Kiválasztás $PATTERN$ majd '(aktuális félév)' alapján",
+    "message": "$PATTERN$ automatikus kiválasztása",
     "description": "Semester selection description",
     "placeholders": {
       "PATTERN": {
