@@ -6,14 +6,14 @@ chrome.storage.sync.get({
     return
   }
 
-    if (window.location.toString().includes('neptun')) {
-      const options = Array.from(document.querySelectorAll('option'));
-      const selectSuccess = selectCurrentSemester(options);
+  if (window.location.toString().includes('neptun')) {
+    const options = Array.from(document.querySelectorAll('option'));
+    const selectSuccess = selectCurrentSemester(options);
 
-      if (prefs.automaticListing && selectSuccess) {
-        clickListing()
-      }
+    if (prefs.automaticListing && selectSuccess) {
+      clickListing()
     }
+  }
 });
 
 function selectCurrentSemester(options) {
