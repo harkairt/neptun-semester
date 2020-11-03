@@ -17,10 +17,10 @@ function setMessages() {
 function restoreOptions() {
   chrome.storage.sync.get({
     enabled: false,
-    automaticListing: false,
+    automaticListingOnChange: false,
   }, function (prefs) {
     document.getElementById('main-switch').checked = prefs.enabled
-    document.getElementById('automatic-listing-switch').checked = prefs.automaticListing
+    document.getElementById('automatic-listing-switch').checked = prefs.automaticListingOnChange
     updateConfigElementEnabledState(prefs.enabled)
   });
 }
@@ -40,7 +40,7 @@ function updateConfigElementEnabledState(enabled) {
 
 function onAutomaticListingSwitch(enabled) {
   chrome.storage.sync.set({
-    automaticListing: enabled.target.checked
+    automaticListingOnChange: enabled.target.checked
   });
 }
 
